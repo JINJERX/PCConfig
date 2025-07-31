@@ -16,30 +16,34 @@
 
 https://youtube.com/shorts/XlzO6PgaBgI?feature=share
 
-Compatibility Logic
-The application automatically checks for compatibility between selected PC components to help users build a functional configuration. Compatibility checks include:
+## Compatibility Logic
 
-CPU ↔ Motherboard
-Ensures that the selected CPU socket matches the motherboard socket.
+The application automatically checks for compatibility between selected PC components to help users build a functional configuration.
 
-RAM ↔ Motherboard
-Verifies RAM type (e.g., DDR4) is supported by the motherboard.
+### Checks include:
 
-GPU ↔ PSU
-Recommends a PSU with sufficient wattage based on the GPU's power requirements.
+- **CPU ↔ Motherboard**  
+  Ensures that the selected CPU socket matches the motherboard socket.
 
-Motherboard ↔ Case
-Validates that the case supports the motherboard form factor (e.g., ATX, Micro-ATX).
+- **RAM ↔ Motherboard**  
+  Verifies RAM type (e.g., DDR4) is supported by the motherboard.
 
-Storage ↔ Motherboard
-Filters only compatible storage devices (e.g., M.2, SATA) based on motherboard slots.
+- **GPU ↔ PSU**  
+  Recommends a PSU with sufficient wattage based on the GPU's power requirements.
 
-PSU ↔ Case
-Ensures the selected PSU fits into the chosen case size (ATX, SFX, etc).
+- **Motherboard ↔ Case**  
+  Validates that the case supports the motherboard form factor (e.g., ATX, Micro-ATX).
 
-RAM Slots Check
-Prevents adding more RAM sticks than the motherboard supports.
+- **Storage ↔ Motherboard**  
+  Filters only compatible storage devices (e.g., M.2, SATA) based on motherboard slots.
 
-The system dynamically filters and suggests only compatible options as the user builds the configuration. If a component becomes incompatible due to a new selection (e.g., switching to a different CPU), the app will update available options accordingly.
+- **PSU ↔ Case**  
+  Ensures the selected PSU fits into the chosen case size (ATX, SFX, etc).
+
+- **RAM Slot Limit**  
+  Prevents adding more RAM sticks than the motherboard supports.
+
+ The system dynamically filters and suggests only compatible options.  
+If a conflict occurs, the app updates available selections accordingly.
 
 

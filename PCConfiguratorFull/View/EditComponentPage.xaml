@@ -1,0 +1,80 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="MauiApp3.View.EditComponentPage"
+             Title="Редактирование компонента"
+             BackgroundColor="#1E1E1E">
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="15">
+
+            <!-- Фото -->
+            <Image x:Name="ComponentImage"
+                   HeightRequest="200"
+                   Margin="0,0,0,10"
+                   Aspect="AspectFill"
+                   BackgroundColor="#2A2A2A"/>
+
+            <Button Text="Изменить фото"
+                    Clicked="OnChangeImageClicked"
+                    BackgroundColor="#FF4500"
+                    TextColor="White"
+                    CornerRadius="10"/>
+
+            <!-- Основные поля -->
+            <Entry x:Name="NameEntry" Placeholder="Название" BackgroundColor="#2A2A2A" TextColor="White"/>
+            <Entry x:Name="TypeEntry" Placeholder="Тип (CPU, GPU и т.д.)" BackgroundColor="#2A2A2A" TextColor="White"/>
+            <Entry x:Name="PowerConsumptionEntry" Placeholder="Потребление (Вт)" Keyboard="Numeric" BackgroundColor="#2A2A2A" TextColor="White"/>
+
+            <!-- CPU -->
+            <Entry x:Name="SocketEntry" Placeholder="Сокет" BackgroundColor="#2A2A2A" TextColor="White"/>
+            <Entry x:Name="TDPEntry" Placeholder="TDP (Вт)" Keyboard="Numeric" BackgroundColor="#2A2A2A" TextColor="White"/>
+
+            <!-- RAM -->
+            <Entry x:Name="RamTypeEntry" Placeholder="Тип памяти" BackgroundColor="#2A2A2A" TextColor="White"/>
+            <Entry x:Name="RamCapacityEntry" Placeholder="Объем памяти (ГБ)" Keyboard="Numeric" BackgroundColor="#2A2A2A" TextColor="White"/>
+            <Entry x:Name="RamFrequencyEntry" Placeholder="Частота памяти (МГц)" Keyboard="Numeric" BackgroundColor="#2A2A2A" TextColor="White"/>
+            <Entry x:Name="RamModulesEntry" Placeholder="Кол-во модулей" Keyboard="Numeric" BackgroundColor="#2A2A2A" TextColor="White"/>
+
+            <!-- Motherboard -->
+            <Entry x:Name="FormFactorEntry" Placeholder="Форм-фактор" BackgroundColor="#2A2A2A" TextColor="White"/>
+            <Entry x:Name="ChipsetEntry" Placeholder="Чипсет" BackgroundColor="#2A2A2A" TextColor="White"/>
+            <Entry x:Name="RamSlotsEntry" Placeholder="Слоты RAM" Keyboard="Numeric" BackgroundColor="#2A2A2A" TextColor="White"/>
+            <Entry x:Name="MaxRamEntry" Placeholder="Макс RAM (ГБ)" Keyboard="Numeric" BackgroundColor="#2A2A2A" TextColor="White"/>
+            <Entry x:Name="PCIESlotsEntry" Placeholder="Слоты PCIe" Keyboard="Numeric" BackgroundColor="#2A2A2A" TextColor="White"/>
+
+            <!-- GPU -->
+            <Entry x:Name="GpuLengthEntry" Placeholder="Длина GPU (мм)" Keyboard="Numeric" BackgroundColor="#2A2A2A" TextColor="White"/>
+            <Entry x:Name="RecommendedPSUWattageEntry" Placeholder="Реком. мощность PSU" Keyboard="Numeric" BackgroundColor="#2A2A2A" TextColor="White"/>
+
+            <!-- PSU -->
+            <Entry x:Name="WattageEntry" Placeholder="Мощность PSU (Вт)" Keyboard="Numeric" BackgroundColor="#2A2A2A" TextColor="White"/>
+            <Entry x:Name="EfficiencyRatingEntry" Placeholder="Эффективность (80+ Bronze...)" BackgroundColor="#2A2A2A" TextColor="White"/>
+            <Entry x:Name="PSUFormFactorEntry" Placeholder="Форм-фактор PSU" BackgroundColor="#2A2A2A" TextColor="White"/>
+
+            <!-- Cooling -->
+            <Entry x:Name="CoolingTypeEntry" Placeholder="Тип охлаждения (Air/Liquid)" BackgroundColor="#2A2A2A" TextColor="White"/>
+            <Entry x:Name="MaxTDPEntry" Placeholder="Макс. TDP (Вт)" Keyboard="Numeric" BackgroundColor="#2A2A2A" TextColor="White"/>
+            <Entry x:Name="SocketSupportEntry" Placeholder="Поддержка сокетов" BackgroundColor="#2A2A2A" TextColor="White"/>
+
+            <!-- Описание -->
+            <Editor x:Name="DescriptionEditor"
+                    Placeholder="Описание"
+                    BackgroundColor="#2A2A2A"
+                    TextColor="White"
+                    HeightRequest="100"/>
+
+            <!-- Цена -->
+            <Entry x:Name="PriceEntry" Placeholder="Цена" Keyboard="Numeric" BackgroundColor="#2A2A2A" TextColor="White"/>
+            <Entry x:Name="CurrencyEntry" Placeholder="Валюта (по умолчанию MDL)" BackgroundColor="#2A2A2A" TextColor="White"/>
+
+            <!-- Сохранение -->
+            <Button Text="Сохранить изменения"
+                    Clicked="OnSaveButtonClicked"
+                    BackgroundColor="#FF4500"
+                    TextColor="White"
+                    CornerRadius="12"
+                    Margin="0,10,0,0"/>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

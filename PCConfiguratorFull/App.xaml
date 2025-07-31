@@ -1,0 +1,44 @@
+﻿<?xml version = "1.0" encoding = "UTF-8" ?>
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MauiApp3"
+             x:Class="MauiApp3.App">
+    <Application.Resources>
+        <ResourceDictionary>
+
+            <!-- Цвета -->
+            <Color x:Key="PrimaryColor">#FF4500</Color>
+            <Color x:Key="DarkGrayColor">#1E1E1E</Color>
+
+            <!-- Стиль шапки (Navigation Bar) -->
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource DarkGrayColor}" />
+                <Setter Property="BarTextColor" Value="{StaticResource PrimaryColor}" />
+            </Style>
+
+            <!-- Стиль кнопок по умолчанию -->
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#FF4500"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="CornerRadius" Value="10"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+            </Style>
+
+            <!-- Стиль Entry -->
+            <Style TargetType="Entry">
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="PlaceholderColor" Value="Gray"/>
+                <Setter Property="BackgroundColor" Value="#222222"/>
+            </Style>
+
+            <!-- Стиль Label заголовков -->
+            <Style TargetType="Label" x:Key="HeaderLabel">
+                <Setter Property="TextColor" Value="#FF4500"/>
+                <Setter Property="FontSize" Value="22"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+            </Style>
+
+        </ResourceDictionary>
+    </Application.Resources>
+
+</Application>

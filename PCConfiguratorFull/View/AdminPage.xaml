@@ -1,0 +1,130 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp3.AdminPage"
+             Title="Управление базой данных"
+             BackgroundColor="#1E1E1E">
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="25">
+
+            <Label Text="Список компонентов:"
+                   FontAttributes="Bold"
+                   FontSize="20"
+                   TextColor="White"
+                   HorizontalOptions="Center"/>
+
+            <!-- Список компонентов -->
+            <CollectionView x:Name="ComponentsCollectionView"
+                            SelectionMode="Single"
+                            SelectionChanged="OnComponentSelected"
+                            BackgroundColor="#2A2A2A"
+                            Margin="0,0,0,10">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Margin="0,5"
+                               Padding="10"
+                               CornerRadius="10"
+                               BackgroundColor="#2A2A2A"
+                               HasShadow="False">
+                            <Grid ColumnSpacing="10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Column="0"
+                                       Text="{Binding Name}"
+                                       TextColor="White"
+                                       FontSize="16"
+                                       LineBreakMode="TailTruncation"
+                                       VerticalOptions="Center"/>
+
+                                <Button Grid.Column="1"
+                                        Text="Удалить"
+                                        Clicked="OnDeleteClicked"
+                                        CommandParameter="{Binding Id}"
+                                        BackgroundColor="#3A3A3A"
+                                        TextColor="White"
+                                        CornerRadius="6"
+                                        Padding="5,0"/>
+
+                                <Button Grid.Column="2"
+                                        Text="Редактировать"
+                                        Clicked="OnEditButtonClicked"
+                                        CommandParameter="{Binding}"
+                                        BackgroundColor="#FF4500"
+                                        TextColor="White"
+                                        CornerRadius="6"
+                                        Padding="5,0"/>
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <!-- Кнопки управления -->
+            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                <Button Text="Обновить список"
+                        Clicked="OnRefreshClicked"
+                        BackgroundColor="#3A3A3A"
+                        TextColor="White"
+                        CornerRadius="10"
+                        WidthRequest="160"/>
+
+                <Button Text="Добавить компонент"
+                        Clicked="OnAddComponentPageClicked"
+                        BackgroundColor="#FF4500"
+                        TextColor="White"
+                        CornerRadius="10"
+                        WidthRequest="160"/>
+            </HorizontalStackLayout>
+
+            <!-- Фильтр -->
+            <Label Text="Фильтр по типу:"
+                   TextColor="White"
+                   FontSize="16"
+                   FontAttributes="Bold"/>
+
+            <Frame BackgroundColor="#2A2A2A"
+                   CornerRadius="10"
+                   Padding="5"
+                   HasShadow="False">
+                <Picker x:Name="TypeFilterPicker"
+                        Title="Выберите тип компонента"
+                        TextColor="White"
+                        BackgroundColor="#2A2A2A"
+                        SelectedIndexChanged="OnTypeFilterChanged">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Все</x:String>
+                            <x:String>CPU</x:String>
+                            <x:String>GPU</x:String>
+                            <x:String>RAM</x:String>
+                            <x:String>Storage</x:String>
+                            <x:String>PSU</x:String>
+                            <x:String>Case</x:String>
+                            <x:String>Motherboard</x:String>
+                            <x:String>Cooling</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+            </Frame>
+
+            <!-- Экспорт и проверка -->
+            <Button Text="Экспортировать базу данных"
+                    Clicked="OnExportDatabaseClicked"
+                    BackgroundColor="#3A3A3A"
+                    TextColor="White"
+                    CornerRadius="10"
+                    Margin="0,10"/>
+
+            <Button Text="Проверить дубликаты"
+                    Clicked="OnCheckDuplicatesClicked"
+                    BackgroundColor="#2A2A2A"
+                    TextColor="#FF4500"
+                    CornerRadius="10"/>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

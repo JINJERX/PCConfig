@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp3.View.SavedBuildsPage"
+             Title="Мои сборки"
+             BackgroundColor="#1E1E1E">
+
+    <ScrollView>
+        <StackLayout Padding="15" Spacing="20">
+
+            <Label Text="Сохранённые сборки"
+                   FontSize="24"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"/>
+
+            <CollectionView x:Name="BuildsListView"
+                            SelectionMode="None">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BackgroundColor="#2A2A2A" CornerRadius="10" Padding="10">
+                            <StackLayout Spacing="5">
+                                <Label Text="{Binding Name}" FontSize="18" FontAttributes="Bold" TextColor="White"/>
+                                <Label Text="{Binding CPU, StringFormat='CPU: {0}'}" TextColor="LightGray"/>
+                                <Label Text="{Binding GPU, StringFormat='GPU: {0}'}" TextColor="LightGray"/>
+                                <Label Text="{Binding RAM, StringFormat='RAM: {0}'}" TextColor="LightGray"/>
+                                <Label Text="{Binding Storage, StringFormat='Storage: {0}'}" TextColor="LightGray"/>
+                                <Label Text="{Binding PSU, StringFormat='PSU: {0}'}" TextColor="LightGray"/>
+                                <Label Text="{Binding Case, StringFormat='Case: {0}'}" TextColor="LightGray"/>
+                                <Label Text="{Binding Motherboard, StringFormat='Motherboard: {0}'}" TextColor="LightGray"/>
+                                <Label Text="{Binding Cooling, StringFormat='Cooling: {0}'}" TextColor="LightGray"/>
+
+                                <HorizontalStackLayout Spacing="10" Margin="0,5,0,0">
+                                    <Button Text="Подробнее"
+                                            Clicked="OnViewDetailsClicked"
+                                            CommandParameter="{Binding}"
+                                            BackgroundColor="#FF4500"
+                                            TextColor="White"
+                                            CornerRadius="6"/>
+                                    <Button Text="PDF"
+                                            Clicked="OnExportPdfClicked"
+                                            CommandParameter="{Binding}"
+                                            BackgroundColor="#2A2A2A"
+                                            TextColor="White"
+                                            CornerRadius="6"/>
+
+                                    <Button Text="Удалить"
+                                            Clicked="OnDeleteBuildClicked"
+                                            CommandParameter="{Binding}"
+                                            BackgroundColor="#444"
+                                            TextColor="White"
+                                            CornerRadius="6"/>
+                                </HorizontalStackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

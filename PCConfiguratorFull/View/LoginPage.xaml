@@ -1,0 +1,60 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp3.View.LoginPage"
+             Title="Вход"
+             BackgroundColor="#1E1E1E">
+
+    <VerticalStackLayout Padding="30" Spacing="20">
+
+        <!-- Логотип -->
+        <Image Source="logo.png" HeightRequest="100" HorizontalOptions="Center"/>
+
+        <!-- Заголовок -->
+        <Label Text="Вход в систему"
+               Style="{StaticResource HeaderLabel}"
+               HorizontalOptions="Center"/>
+
+        <!-- Поля ввода -->
+        <Frame BackgroundColor="#2A2A2A" CornerRadius="10" HasShadow="False" Padding="10">
+            <Entry x:Name="UsernameEntry"
+                   Placeholder="Логин"/>
+        </Frame>
+
+        <Frame BackgroundColor="#2A2A2A" CornerRadius="10" HasShadow="False" Padding="10">
+            <Entry x:Name="PasswordEntry"
+                   Placeholder="Пароль"
+                   IsPassword="True"/>
+        </Frame>
+
+        <!-- Кнопка входа -->
+        <Button Text="Войти"
+                Clicked="OnLoginClicked"/>
+
+        <!-- Сообщение об ошибке -->
+        <Label x:Name="ErrorLabel"
+               TextColor="Red"
+               IsVisible="False"
+               HorizontalOptions="Center"
+               FontAttributes="Bold"/>
+
+        <!-- Ссылки -->
+        <Label Text="Забыли пароль?"
+               TextColor="LightGray"
+               FontSize="14"
+               HorizontalOptions="Center"/>
+
+        <Label Text="Создать аккаунт"
+               TextColor="#FF4500"
+               FontSize="14"
+               HorizontalOptions="Center"
+               FontAttributes="Bold"/>
+
+        <!-- Версия -->
+        <Label Text="Версия 1.0.0"
+               TextColor="Gray"
+               FontSize="12"
+               HorizontalOptions="Center"/>
+
+    </VerticalStackLayout>
+
+</ContentPage>
